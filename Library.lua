@@ -1086,7 +1086,7 @@ local function StartEasyMode()
 
         while Globals.Easy and content == nil do
             local success, res = pcall(function() 
-                return game:HttpGet("https://raw.githubusercontent.com/DuxiiT/auto-strat/refs/heads/main/Strategies/Easy.lua") 
+                return game:HttpGet("https://raw.githubusercontent.com/Irfan325011/Test-strats/refs/heads/main/Strategies/Easy.lua") 
             end)
 
             if success and type(res) == "string" then
