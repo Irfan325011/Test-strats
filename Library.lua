@@ -2078,7 +2078,6 @@ local Strategies = Window:Tab({Title = "Strategies", Icon = "clipboard-list"}) d
         end
     })
 
---[[
     Strategies:Toggle({
         Title = "Fallen Mode",
         Desc = "Skill tree: Not needed\n\nTowers:\nGolden Scout,\nBrawler,\nMercenary Base,\nElectroshocker,\nEngineer",
@@ -2209,7 +2208,6 @@ local Strategies = Window:Tab({Title = "Strategies", Icon = "clipboard-list"}) d
             end
         end
     })
-]]
 end
 
 Window:Line()
