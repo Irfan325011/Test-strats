@@ -2208,7 +2208,6 @@ local Strategies = Window:Tab({Title = "Strategies", Icon = "clipboard-list"}) d
             end
         end
     })
-]]
 end
 
 Window:Line()
