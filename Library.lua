@@ -1074,48 +1074,6 @@ local function StartAutoReady()
     end)
 end
 
-local EasyModeRunning = false
-
-local function StartEasyMode()
-    if EasyModeRunning or not Globals.Easy then return end
-
-    EasyModeRunning = true
-
-    task.spawn(function()
-        local content = nil
-
-        while Globals.Easy and content == nil do
-            local success, res = pcall(function() 
-                return game:HttpGet("https://raw.githubusercontent.com/Irfan325011/Test-strats/refs/heads/main/Strategies/Easy.lua") 
-            end)
-
-            if success and type(res) == "string" then
-                content = res
-            else
-                task.wait(1)
-            end
-        end
-
-        if content then
-            while not (TDS and TDS.Loadout) do 
-                task.wait(0.5) 
-            end
-
-            local func = loadstring(content)
-
-            if func then
-                pcall(func)
-
-                Window:Notify({Title = "ADS", Desc = "Running...", Time = 3})
-            end
-        end
-
-        repeat task.wait(2) until not Globals.Easy or (GameState == "GAME" and not game:IsLoaded())
-
-        EasyModeRunning = false
-    end)
-end
-
 -- // ui
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/DuxiiT/auto-strat/refs/heads/main/Sources/UI.lua"))()
 
