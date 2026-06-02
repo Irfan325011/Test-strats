@@ -2023,20 +2023,6 @@ local Strategies = Window:Tab({Title = "Strategies", Icon = "clipboard-list"}) d
 
     Strategies:Section({Title = "Survival Strategies"})
     Strategies:Toggle({
-        Title = "Easy Mode (Summer Castle)",
-        Desc = "Requires: Normal Scout\nMap: Summer Castle",
-        Value = Globals.Easy,
-        Callback = function(v)
-            Globals.Easy = v
-            SetSetting("Easy", v)
-
-            if v then
-                StartEasyMode()
-            end
-        end
-    })
-
-    Strategies:Toggle({
         Title = "Fallen Mode",
         Desc = "Skill tree: Not needed\n\nTowers:\nGolden Scout,\nBrawler,\nMercenary Base,\nElectroshocker,\nEngineer",
         Value = Globals.Fallen,
